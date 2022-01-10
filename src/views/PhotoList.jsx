@@ -48,7 +48,7 @@ function PhotoList() {
         pageParams.pageLength
       );
       setPhotos(resp.sort((a, b) => b.date.localeCompare(a.date)));
-    } catch {
+    } catch (error) {
       showErrorDialog();
     }
   };
