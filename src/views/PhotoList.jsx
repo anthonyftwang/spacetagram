@@ -93,9 +93,9 @@ function PhotoList() {
             inputProps={{ 'aria-label': 'photos per page' }}
             variant="standard"
           >
-            <MenuItem value={1}>1 per page</MenuItem>
-            <MenuItem value={5}>5 per page</MenuItem>
-            <MenuItem value={10}>10 per page</MenuItem>
+            <MenuItem value={1}>{`1 ${localization.itemsPerPage}`}</MenuItem>
+            <MenuItem value={5}>{`5 ${localization.itemsPerPage}`}</MenuItem>
+            <MenuItem value={10}>{`10 ${localization.itemsPerPage}`}</MenuItem>
           </Select>
         </FormControl>
       </div>

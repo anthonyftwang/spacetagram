@@ -91,7 +91,7 @@ function PhotoCard({
           {showAll ? (
             <>
               {explanation}
-              {/* Use of achor as button is idiomatic for "Read more/less" */}
+              {/* Use of anchor as button is idiomatic for "Read more/less" */}
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <Link
                 component="button"
@@ -99,13 +99,13 @@ function PhotoCard({
                 sx={{ display: 'block', mt: 'var(--spacetagram-text-padding)' }}
                 onClick={() => setShowAll(false)}
               >
-                Read less
+                {localization.readLess}
               </Link>
             </>
           ) : (
             <>
               {truncate(explanation, 150)}
-              {/* Use of achor as button is idiomatic for "Read more/less" */}
+              {/* Use of anchor as button is idiomatic for "Read more/less" */}
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <Link
                 component="button"
@@ -113,7 +113,7 @@ function PhotoCard({
                 sx={{ display: 'block', mt: 'var(--spacetagram-text-padding)' }}
                 onClick={() => setShowAll(true)}
               >
-                Read more
+                {localization.readMore}
               </Link>
             </>
           )}
@@ -134,14 +134,14 @@ function PhotoCard({
       </CardContent>
       <CardActions>
         <Stack direction="row" spacing={1}>
-          <IconButton onClick={() => setLiked(!liked)}>
+          <IconButton onClick={() => setLiked(!liked)} size="large">
             {liked ? (
               <FavoriteIcon color="secondary" />
             ) : (
               <FavoriteBorderIcon />
             )}
           </IconButton>
-          <IconButton onClick={openInHD} disabled={!hdurl}>
+          <IconButton onClick={openInHD} size="large" disabled={!hdurl}>
             <OpenInNewIcon />
           </IconButton>
         </Stack>

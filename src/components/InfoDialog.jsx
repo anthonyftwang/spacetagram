@@ -8,6 +8,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from '@mui/material';
+import localization from 'util/strings';
 
 /**
  * Simple dialog that displays modal text and can then be dismissed.
@@ -27,7 +28,9 @@ function InfoDialog({ title, text, open, onClose }) {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={closeDialog}>Close</Button>
+        <Button type="button" onClick={closeDialog}>
+          {localization.dialogClose}
+        </Button>
       </DialogActions>
     </Dialog>
   );
