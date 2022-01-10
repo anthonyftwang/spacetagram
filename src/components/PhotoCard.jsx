@@ -54,10 +54,7 @@ function PhotoCard({
   };
 
   return (
-    <Card
-      sx={{ minWidth: 275, mb: 'var(--spacetagram-main-padding)' }}
-      variant="outlined"
-    >
+    <Card sx={{ minWidth: 275, mb: 'var(--spacetagram-main-padding)' }}>
       {mediaType === 'image' ? (
         <CardMedia
           component="img"
