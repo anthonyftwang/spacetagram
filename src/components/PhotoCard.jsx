@@ -135,7 +135,11 @@ function PhotoCard({
       <CardActions>
         <Stack direction="row" spacing={1}>
           <IconButton onClick={() => setLiked(!liked)}>
-            {liked ? <FavoriteIcon color="primary" /> : <FavoriteBorderIcon />}
+            {liked ? (
+              <FavoriteIcon color="secondary" />
+            ) : (
+              <FavoriteBorderIcon />
+            )}
           </IconButton>
           <IconButton onClick={openInHD} disabled={!hdurl}>
             <OpenInNewIcon />
