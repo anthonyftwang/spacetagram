@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 /**
  *
- * @param {string} localStorageKey - The local storage key where the value should be stored.
+ * @param {string} localStorageKey - The key by which to store the value.
  * @returns {array} The state value and update function.
  */
 
