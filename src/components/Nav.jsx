@@ -23,7 +23,17 @@ function Nav({ usingDarkTheme, toggleDarkTheme }) {
     <nav>
       <AppBar position="static" sx={{ bgcolor: 'primary.main' }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              '&.MuiTypography-root': {
+                fontFamily: 'Cookie',
+                fontSize: '2rem',
+              },
+            }}
+          >
             {localization.appName}
           </Typography>
           <IconButton
