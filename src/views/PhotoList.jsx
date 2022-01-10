@@ -22,15 +22,15 @@ import localization from 'util/strings';
 function PhotoList() {
   const [photos, setPhotos] = useState([]);
   const [pageParams, setPageParams] = useState({ page: 1, pageLength: 5 });
-  const [infoDialogVisible, setInfoDialogVisible] = useState(false);
+  const [aboutDialogVisible, setAboutDialogVisible] = useState(false);
   const [errorDialogVisible, setErrorDialogVisible] = useState(false);
 
-  const showInfoDialog = () => {
-    setInfoDialogVisible(true);
+  const showAboutDialog = () => {
+    setAboutDialogVisible(true);
   };
 
-  const hideInfoDialog = () => {
-    setInfoDialogVisible(false);
+  const hideAboutDialog = () => {
+    setAboutDialogVisible(false);
   };
 
   const showErrorDialog = () => {
@@ -77,7 +77,7 @@ function PhotoList() {
       <div className="listHeader">
         <Typography variant="h6" component="div" flexGrow={1}>
           {localization.heading}
-          <IconButton onClick={showInfoDialog}>
+          <IconButton onClick={showAboutDialog}>
             <InfoIconOutlined />
           </IconButton>
         </Typography>
@@ -129,8 +129,8 @@ function PhotoList() {
       <InfoDialog
         title={localization.aboutDialogTitle}
         text={localization.aboutDialogText}
-        open={infoDialogVisible}
-        onClose={hideInfoDialog}
+        open={aboutDialogVisible}
+        onClose={hideAboutDialog}
       />
       <InfoDialog
         title={localization.errorDialogTitle}
