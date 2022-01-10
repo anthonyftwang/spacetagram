@@ -15,6 +15,12 @@ main {
   max-width: 600px;
 }
 
+.listHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 :root {
   --spacetagram-green: #5e8e3e;
   --spacetagram-light-green: #95bf47;
@@ -22,4 +28,6 @@ main {
   --spacetagram-black: #000000;
 
   --spacetagram-main-padding: 1rem;
+  --spacetagram-text-padding: 0.5rem;
+  --spacetagram-large-padding: 2rem;
 }
