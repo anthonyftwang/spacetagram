@@ -50,7 +50,7 @@ function PhotoCard({
   };
 
   const openInHD = () => {
-    window.open(hdurl, '_blank').focus();
+    window.open(hdurl, '_blank');
   };
 
   return (
