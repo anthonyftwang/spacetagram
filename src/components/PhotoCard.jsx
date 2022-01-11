@@ -67,6 +67,7 @@ function PhotoCard({
         <CardMedia
           component="iframe"
           src={url}
+          role="application"
           title={`${localization.imgAltTemplate} ${moment(date).format(
             'MMM D, YYYY'
           )}`}
