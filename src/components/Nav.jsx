@@ -10,9 +10,9 @@ import localization from 'util/strings';
  * Top navigation bar with app name and link to source code.
  */
 
-function Nav({ usingDarkTheme, toggleDarkTheme }) {
+function Nav({ usingLightTheme, toggleLightTheme }) {
   const toggleTheme = () => {
-    toggleDarkTheme(!usingDarkTheme);
+    toggleLightTheme(!usingLightTheme);
   };
 
   const openCode = () => {
@@ -41,13 +41,13 @@ function Nav({ usingDarkTheme, toggleDarkTheme }) {
             size="large"
             color="inherit"
             aria-label={
-              usingDarkTheme
-                ? localization.ariaLabels.lightThemeButton
-                : localization.ariaLabels.darkThemeButton
+              usingLightTheme
+                ? localization.ariaLabels.darkThemeButton
+                : localization.ariaLabels.lightThemeButton
             }
             onClick={toggleTheme}
           >
-            {usingDarkTheme ? <LightModeIcon /> : <DarkModeIcon />}
+            {usingLightTheme ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
           <IconButton
             type="button"
@@ -66,9 +66,9 @@ function Nav({ usingDarkTheme, toggleDarkTheme }) {
 
 Nav.propTypes = {
   /** Describes which theme is currently active. */
-  usingDarkTheme: PropTypes.bool.isRequired,
+  usingLightTheme: PropTypes.bool.isRequired,
   /** Callback when theme toggle is clicked. */
-  toggleDarkTheme: PropTypes.func.isRequired,
+  toggleLightTheme: PropTypes.func.isRequired,
 };
 
 export default Nav;

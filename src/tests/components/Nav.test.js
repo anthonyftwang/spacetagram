@@ -10,30 +10,32 @@ it('renders toolbar with app title', () => {
   expect(screen.getByRole('banner')).toHaveTextContent(localization.appName);
 });
 
-it('renders light theme button when in using dark mode', () => {
-  const setDarkThemeActive = jest.fn();
-  render(<Nav usingDarkTheme toggleDarkTheme={setDarkThemeActive} />);
+it('renders light theme button when in dark mode', () => {
+  const setLightThemeActive = jest.fn();
+  render(
+    <Nav usingLightTheme={false} toggleLightTheme={setLightThemeActive} />
+  );
   const toggle = screen.getByRole('button', {
     name: localization.ariaLabels.lightThemeButton,
   });
   expect(screen.getByRole('banner')).toContainElement(toggle);
   expect(toggle).toBeEnabled();
   fireEvent.click(toggle);
-  expect(setDarkThemeActive).toHaveBeenCalled();
-  expect(setDarkThemeActive).toHaveBeenCalledWith(false);
+  expect(setLightThemeActive).toHaveBeenCalled();
+  expect(setLightThemeActive).toHaveBeenCalledWith(true);
 });
 
-it('renders dark theme button when in using light mode', () => {
-  const setDarkThemeActive = jest.fn();
-  render(<Nav usingDarkTheme={false} toggleDarkTheme={setDarkThemeActive} />);
+it('renders dark theme button when in light mode', () => {
+  const setLightThemeActive = jest.fn();
+  render(<Nav usingLightTheme toggleLightTheme={setLightThemeActive} />);
   const toggle = screen.getByRole('button', {
     name: localization.ariaLabels.darkThemeButton,
   });
   expect(screen.getByRole('banner')).toContainElement(toggle);
   expect(toggle).toBeEnabled();
   fireEvent.click(toggle);
-  expect(setDarkThemeActive).toHaveBeenCalled();
-  expect(setDarkThemeActive).toHaveBeenCalledWith(true);
+  expect(setLightThemeActive).toHaveBeenCalled();
+  expect(setLightThemeActive).toHaveBeenCalledWith(false);
 });
 
 it('renders link to github repo in app bar', () => {
