@@ -30,7 +30,7 @@ const logPageFetch = async function apiLogPageFetch(
 };
 
 /**
- *
+ * Calls the NASA APOD API for the given page parameters.
  * @param {number} page - The page number, where 1 has the most recent photo(s).
  * @param {number} numPerPage - The number of photos displayed per page.
  * @returns {array} The collection of objects with each photo's (meta)data.

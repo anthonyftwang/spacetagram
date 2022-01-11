@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 /**
- *
+ * Reusable useState hook that reads/persists value via localStorage.
  * @param {string} localStorageKey - The key by which to store the value.
  * @returns {array} The state value and update function.
  */
