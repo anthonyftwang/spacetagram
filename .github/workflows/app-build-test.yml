@@ -28,3 +28,9 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
+      - name: Code Climate Coverage Action
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: e431de4e42ffcab0eb99f64e11a6e794ed560879b7da59ca137c2937dd93ac7a
+        with:
+          coverageCommand: coverageCommand: npm run test -- --coverage --collectCoverageFrom='[src/**/*.{js,jsx}, !src/{index,reportWebVitals,setupTests}.js]'
