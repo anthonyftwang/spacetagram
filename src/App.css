@@ -1,5 +1,5 @@
 main {
-  padding: var(--spacetagram-main-padding);
+  padding-block: var(--spacetagram-main-padding);
   display: flex;
   flex-grow: 100;
   height: 100%;
@@ -17,6 +17,7 @@ main {
 
 .listHeader {
   display: flex;
+  padding-inline: var(--spacetagram-main-padding);
   align-items: center;
   width: 100%;
 }
