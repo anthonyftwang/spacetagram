@@ -75,9 +75,12 @@ function PhotoList() {
   return (
     <div className="pageContents">
       <div className="listHeader">
-        <Typography variant="h6" component="div" flexGrow={1}>
+        <Typography variant="h6" flexGrow={1}>
           {localization.heading}
-          <IconButton onClick={showAboutDialog}>
+          <IconButton
+            onClick={showAboutDialog}
+            aria-label={localization.ariaLabels.aboutButton}
+          >
             <InfoIconOutlined />
           </IconButton>
         </Typography>

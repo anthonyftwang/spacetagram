@@ -40,6 +40,11 @@ function Nav({ usingDarkTheme, toggleDarkTheme }) {
             type="button"
             size="large"
             color="inherit"
+            aria-label={
+              usingDarkTheme
+                ? localization.ariaLabels.lightThemeButton
+                : localization.ariaLabels.darkThemeButton
+            }
             onClick={toggleTheme}
           >
             {usingDarkTheme ? <LightModeIcon /> : <DarkModeIcon />}
@@ -48,6 +53,7 @@ function Nav({ usingDarkTheme, toggleDarkTheme }) {
             type="button"
             size="large"
             color="inherit"
+            aria-label={localization.ariaLabels.sourceCodeButton}
             onClick={openCode}
           >
             <GitHubIcon />

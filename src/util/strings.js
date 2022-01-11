@@ -17,6 +17,16 @@ export const en = {
   itemsPerPage: 'per page',
   readMore: 'Read more',
   readLess: 'Read less',
+  ariaLabels: {
+    lightThemeButton: 'toggle light theme',
+    darkThemeButton: 'toggle dark theme',
+    sourceCodeButton: 'link to source code',
+    aboutButton: 'about these images',
+    pageLengthControl: 'photos per page',
+    likePhoto: 'like this photo',
+    unlikePhoto: 'unlike this photo',
+    openInHD: 'view full resolution photo',
+  },
 };
 
 export default en;

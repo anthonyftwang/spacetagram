@@ -131,14 +131,27 @@ function PhotoCard({
       </CardContent>
       <CardActions>
         <Stack direction="row" spacing={1}>
-          <IconButton onClick={() => setLiked(!liked)} size="large">
+          <IconButton
+            onClick={() => setLiked(!liked)}
+            size="large"
+            aria-label={
+              liked
+                ? localization.ariaLabels.unlikePhoto
+                : localization.ariaLabels.likePhoto
+            }
+          >
             {liked ? (
               <FavoriteIcon color="secondary" />
             ) : (
               <FavoriteBorderIcon />
             )}
           </IconButton>
-          <IconButton onClick={openInHD} size="large" disabled={!hdurl}>
+          <IconButton
+            onClick={openInHD}
+            size="large"
+            disabled={!hdurl}
+            aria-label={localization.ariaLabels.openInHD}
+          >
             <OpenInNewIcon />
           </IconButton>
         </Stack>
