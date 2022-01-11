@@ -2,6 +2,34 @@ import moment from 'moment';
 import 'moment-timezone';
 
 /**
+ * Helper function to log fetch details in development environments.
+ * @param {number} page - The page number, where 1 has the most recent photo(s).
+ * @param {number} numPerPage - The number of photos displayed per page.
+ * @param {string} today - YYYY-MM-DD present day EST
+ * @param {string} startDate - YYYY-MM-DD start of date range
+ * @param {string} endDate - YYYY-MM-DD end of date range
+ */
+const logPageFetch = async function apiLogPageFetch(
+  page,
+  numPerPage,
+  today,
+  startDate,
+  endDate
+) {
+  if (process.env.NODE_ENV === 'development') {
+    const pageFetchDetails = {
+      page,
+      numPerPage,
+      today,
+      startDate,
+      endDate,
+    };
+    // eslint-disable-next-line no-console
+    console.log({ pageFetchDetails });
+  }
+};
+
+/**
  *
  * @param {number} page - The page number, where 1 has the most recent photo(s).
  * @param {number} numPerPage - The number of photos displayed per page.
@@ -19,17 +47,7 @@ const getPhotosService = async function apiGetPhotosService(page, numPerPage) {
     .subtract(numPerPage - 1, 'days')
     .format('YYYY-MM-DD');
 
-  if (process.env.NODE_ENV === 'development') {
-    const pageFetchDetails = {
-      page,
-      numPerPage,
-      today,
-      startDate,
-      endDate,
-    };
-    // eslint-disable-next-line no-console
-    console.log({ pageFetchDetails });
-  }
+  logPageFetch(page, numPerPage, today, startDate, endDate);
 
   try {
     const resp = await fetch(
