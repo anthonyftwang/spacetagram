@@ -38,7 +38,9 @@ it('shows about dialog when info icon pressed', async () => {
     screen.getByRole('button', { name: localization.dialogClose })
   );
   await waitFor(() =>
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('dialog', { name: localization.aboutDialogTitle })
+    ).not.toBeInTheDocument()
   );
 });
 
