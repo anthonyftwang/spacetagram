@@ -43,13 +43,9 @@ CardSkeleton.defaultProps = {
 
 function Loading({ numPerPage }) {
   return (
-    <div
-      className="loadingPlaceholder"
-      role="status"
-      aria-label="photo list loading"
-    >
-      {[...Array(numPerPage).keys()].map(() => (
-        <>
+    <div className="loadingPlaceholder" role="status">
+      {[...Array(numPerPage).keys()].map((key) => (
+        <React.Fragment key={key}>
           <CardSkeleton
             height={400}
             width="100%"
@@ -85,7 +81,7 @@ function Loading({ numPerPage }) {
             width="20%"
             spacing="var(--spacetagram-large-padding)"
           />
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
