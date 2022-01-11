@@ -31,6 +31,6 @@ jobs:
       - name: Code Climate Coverage Action
         uses: paambaati/codeclimate-action@v3.0.0
         env:
-          CC_TEST_REPORTER_ID: e431de4e42ffcab0eb99f64e11a6e794ed560879b7da59ca137c2937dd93ac7a
+          CC_TEST_REPORTER_ID: 2541a5af510f7349a4d301b9ff3f11b8b0cde43f1dfc1ae9772d4899f0a63e28
         with:
           coverageCommand: npm run test -- --coverage --collectCoverageFrom=src/**/*.{js,jsx} --collectCoverageFrom=!src/index.js --collectCoverageFrom=!src/reportWebVitals.js --collectCoverageFrom=!src/setupTests.js
