@@ -4,8 +4,8 @@ import Nav from 'components/Nav';
 import localization from 'util/strings';
 
 it('renders toolbar with app title', () => {
-  const setDarkThemeActive = jest.fn();
-  render(<Nav usingDarkTheme toggleDarkTheme={setDarkThemeActive} />);
+  const setLightThemeActive = jest.fn();
+  render(<Nav usingLightTheme toggleLightTheme={setLightThemeActive} />);
   expect(screen.getByRole('banner')).toBeVisible();
   expect(screen.getByRole('banner')).toHaveTextContent(localization.appName);
 });
@@ -39,14 +39,14 @@ it('renders dark theme button when in light mode', () => {
 });
 
 it('renders link to github repo in app bar', () => {
-  const setDarkThemeActive = jest.fn();
+  const setLightThemeActive = jest.fn();
   const hrefChange = jest.fn();
   delete window.location;
   window.location = {};
   Object.defineProperty(window.location, 'href', {
     set: hrefChange,
   });
-  render(<Nav usingDarkTheme toggleDarkTheme={setDarkThemeActive} />);
+  render(<Nav usingLightTheme toggleLightTheme={setLightThemeActive} />);
   const github = screen.getByRole('button', {
     name: localization.ariaLabels.sourceCodeButton,
   });
