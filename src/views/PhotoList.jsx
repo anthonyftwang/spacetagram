@@ -54,18 +54,20 @@ function PhotoList() {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
     fetchPhotos();
   }, [pageParams]);
 
   const handlePageChange = async (event, value) => {
     if (pageParams.page === value) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       return;
     }
+    setPhotos([]);
     setPageParams((prevState) => ({
       ...prevState,
       page: value,
     }));
-    setPhotos([]);
   };
 
   const handlePageLengthChange = (event) => {
