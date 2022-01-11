@@ -27,6 +27,7 @@ const getPhotosService = async function apiGetPhotosService(page, numPerPage) {
       startDate,
       endDate,
     };
+    // eslint-disable-next-line no-console
     console.log({ pageFetchDetails });
   }
 
