@@ -26,7 +26,7 @@
 ### The bread and butter
 
 - 📸 Fetches images from NASA's **Astronomy Picture of the Day** (APOD) API
-- 📄 Displays images along with their dates, titles, explanations, and copyrights
+- 📅 Displays images along with their dates, titles, explanations, and copyrights
 - ❤️ Allows users to like and unlike images
 
 ### Some extra goodies
@@ -34,7 +34,7 @@
 - 💾 Saves likes in the browser's localStorage
 - 🌙 Has a toggle for dark mode, because this is space after all
   - Theme preferences are saved across sessions too!
-- ⚙️ Lets users the number of items to see on each page
+- ⚙️ Lets users change the number of items on each page
 - ↔️ Paginates to enable navigation through past photos
   - Page 1 always contains the latest image
   - Each page shows the correct images, accounting for the number of items per page
