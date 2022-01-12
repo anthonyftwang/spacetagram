@@ -9,7 +9,6 @@ import {
   CardContent,
   CardMedia,
   CardActions,
-  Link,
   Stack,
   Typography,
 } from '@mui/material';
@@ -17,6 +16,7 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ExpandTextButton from 'components/ExpandTextButton';
 import useStateWithLocalStorage from 'hooks/useStateWithLocalStorage';
 import localization from 'util/strings';
 
@@ -89,30 +89,12 @@ function PhotoCard({
           {showAll ? (
             <>
               {explanation}
-              {/* Use of anchor as button is idiomatic for "Read more/less" */}
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <Link
-                component="button"
-                color="inherit"
-                sx={{ display: 'block', mt: 'var(--spacetagram-text-padding)' }}
-                onClick={() => setShowAll(false)}
-              >
-                {localization.readLess}
-              </Link>
+              <ExpandTextButton readMore={false} onClickHandler={setShowAll} />
             </>
           ) : (
             <>
               {truncate(explanation, 150)}
-              {/* Use of anchor as button is idiomatic for "Read more/less" */}
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <Link
-                component="button"
-                color="inherit"
-                sx={{ display: 'block', mt: 'var(--spacetagram-text-padding)' }}
-                onClick={() => setShowAll(true)}
-              >
-                {localization.readMore}
-              </Link>
+              <ExpandTextButton readMore onClickHandler={setShowAll} />
             </>
           )}
         </Typography>
