@@ -9,13 +9,13 @@ import 'moment-timezone';
  * @param {string} startDate - YYYY-MM-DD start of date range
  * @param {string} endDate - YYYY-MM-DD end of date range
  */
-const logPageFetch = async function apiLogPageFetch(
+const logPageFetch = async function apiLogPageFetch({
   page,
   numPerPage,
   today,
   startDate,
-  endDate
-) {
+  endDate,
+}) {
   if (process.env.NODE_ENV === 'development') {
     const pageFetchDetails = {
       page,
@@ -47,7 +47,7 @@ const getPhotosService = async function apiGetPhotosService(page, numPerPage) {
     .subtract(numPerPage - 1, 'days')
     .format('YYYY-MM-DD');
 
-  logPageFetch(page, numPerPage, today, startDate, endDate);
+  logPageFetch({ page, numPerPage, today, startDate, endDate });
 
   try {
     const resp = await fetch(
